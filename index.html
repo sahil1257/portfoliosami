@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Career Portfolio – Vanilla</title>
+  <meta name="description" content="A clean, responsive portfolio with one-page navigation, filterable work grid, lightbox, slider, and contact form — built in plain HTML, CSS, and JavaScript.">
+  <link rel="preload" href="assets/img/ph-1.png" as="image">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="hgroup">
+      <a class="brand" href="#hero" data-scroll>Career<span>Portfolio</span></a>
+      <button class="nav-button" aria-label="Open menu" aria-controls="navbar" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="search-toggle" aria-label="Open search"></button>
+      <nav class="social" aria-label="Social links">
+        <a href="#" aria-label="Twitter" title="Twitter">T</a>
+        <a href="#" aria-label="GitHub" title="GitHub">G</a>
+        <a href="#" aria-label="LinkedIn" title="LinkedIn">L</a>
+      </nav>
+    </div>
+
+    <div id="navbar" class="navbar" hidden>
+      <h3 class="menu-title">Menu</h3>
+      <nav class="main-navigation" aria-label="Primary">
+        <a href="#hero" data-scroll data-anchor="hero">Home</a>
+        <a href="#about" data-scroll data-anchor="about">About</a>
+        <a href="#services" data-scroll data-anchor="services">Services</a>
+        <a href="#portfolio" data-scroll data-anchor="portfolio">Portfolio</a>
+        <a href="#testimonials" data-scroll data-anchor="testimonials">Testimonials</a>
+        <a href="#blog" data-scroll data-anchor="blog">Blog</a>
+        <a href="#contact" data-scroll data-anchor="contact">Contact</a>
+      </nav>
+      <div class="header-widgets">
+        <div class="widget">
+          <h4>Availability</h4>
+          <p>Open for freelance projects.</p>
+        </div>
+      </div>
+      <button class="close" aria-label="Close menu"></button>
+    </div>
+    <div class="navbar-overlay" hidden><span>Close</span></div>
+
+    <div class="header-search" hidden>
+      <div class="search-container" role="dialog" aria-modal="true" aria-label="Site search">
+        <form role="search" class="search-form" onsubmit="return false;">
+          <input type="search" placeholder="Type to search the page…" id="q">
+          <button type="button" class="do-search" aria-label="Search">Search</button>
+        </form>
+        <button class="close-icon" aria-label="Close search">×</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Fullpage anchors rendered as sections -->
+    <section id="hero" class="section hero" data-anchor="hero" aria-label="Intro">
+      <div class="container split">
+        <div class="hero-copy">
+          <h1 class="display">Hi, I design & build digital experiences.</h1>
+          <p class="lead">Designer • Developer • Problem‑solver</p>
+          <div class="cta">
+            <a class="btn primary" href="#portfolio" data-scroll>See work</a>
+            <a class="btn ghost" href="#contact" data-scroll>Hire me</a>
+          </div>
+        </div>
+        <figure class="hero-media">
+          <img src="assets/img/ph-1.jpg" alt="Hero illustration">
+        </figure>
+      </div>
+    </section>
+
+    <section id="about" class="section about" data-anchor="about" aria-label="About">
+      <div class="container">
+        <header class="section-head">
+          <h2>About Me</h2>
+          <p class="sub">Crafting delightful, performant interfaces.</p>
+        </header>
+        <div class="grid two">
+          <figure class="image-card"><img src="assets/img/ph-2.jpg" alt="About image"></figure>
+          <div>
+            <p>I’m a multidisciplinary developer with a passion for clean interfaces, smooth interactions, and accessible experiences.</p>
+            <ul class="facts">
+              <li><strong>5+</strong> years of experience</li>
+              <li><strong>40+</strong> projects shipped</li>
+              <li><strong>100%</strong> client satisfaction</li>
+            </ul>
+            <div class="counters">
+              <div class="counter" data-count="120">0</div>
+              <div class="label">Happy Clients</div>
+              <div class="counter" data-count="85">0</div>
+              <div class="label">Completed Projects</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section services" data-anchor="services" aria-label="Services">
+      <div class="container">
+        <header class="section-head"><h2>Services</h2></header>
+        <div class="grid three">
+          <article class="card">
+            <img src="assets/img/web.webp" alt="UI/UX">
+            <h3>UI/UX Design</h3>
+            <p>Wireframes, prototypes, and pixel‑perfect interfaces.</p>
+          </article>
+          <article class="card">
+            <img src="assets/img/download.jpg" alt="Frontend">
+            <h3>Frontend Development</h3>
+            <p>Semantic HTML, modern CSS, and scalable JavaScript.</p>
+          </article>
+          <article class="card">
+            <img src="assets/img/360_F_318606217_Hk8jo2MVoI33SQOkYrfOF929J7JgIP0P.jpg" alt="Performance">
+            <h3>Performance</h3>
+            <p>Fast, accessible, and SEO‑friendly sites.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="section portfolio" data-anchor="portfolio" aria-label="Portfolio">
+      <div class="container">
+        <header class="section-head">
+          <h2>Selected Work</h2>
+          <nav class="filters" aria-label="Portfolio filters">
+            <button class="filter is-active" data-filter="*">All</button>
+            <button class="filter" data-filter="web">Web</button>
+            <button class="filter" data-filter="app">App</button>
+            <button class="filter" data-filter="brand">Brand</button>
+          </nav>
+        </header>
+        <div class="grid work-grid" id="workGrid">
+          <a class="work-item" data-cat="web" href="assets/img/Screenshot 2025-08-29 215504.png" aria-label="Open Project A" data-lightbox>
+            <figure><img src="assets/img/Screenshot 2025-08-29 215504.png" alt="Project A"><figcaption>Project A</figcaption></figure>
+          </a>
+          <a class="work-item" data-cat="app" href="assets/img/ph-5.png" aria-label="Open Project B" data-lightbox>
+            <figure><img src="assets/img/ph-5.png" alt="Project B"><figcaption>Project B</figcaption></figure>
+          </a>
+          <a class="work-item" data-cat="brand" href="assets/img/ph-6.png" aria-label="Open Project C" data-lightbox>
+            <figure><img src="assets/img/ph-6.png" alt="Project C"><figcaption>Project C</figcaption></figure>
+          </a>
+          <a class="work-item" data-cat="web" href="assets/img/ph-7.png" aria-label="Open Project D" data-lightbox>
+            <figure><img src="assets/img/ph-7.png" alt="Project D"><figcaption>Project D</figcaption></figure>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section testimonials" data-anchor="testimonials" aria-label="Testimonials">
+      <div class="container">
+        <header class="section-head"><h2>Testimonials</h2></header>
+        <div class="slider" aria-roledescription="carousel" aria-label="Client testimonials">
+          <div class="slides">
+            <blockquote class="slide">
+              <p>“A joy to work with — delivered beyond expectations.”</p>
+              <footer>— Alex, Product Lead</footer>
+            </blockquote>
+            <blockquote class="slide">
+              <p>“Crisp design, clean code, and on time. Perfect.”</p>
+              <footer>— Priya, Founder</footer>
+            </blockquote>
+            <blockquote class="slide">
+              <p>“Truly raised the bar for our web presence.”</p>
+              <footer>— Daniel, CTO</footer>
+            </blockquote>
+          </div>
+          <button class="prev" aria-label="Previous slide">‹</button>
+          <button class="next" aria-label="Next slide">›</button>
+          <div class="dots" role="tablist" aria-label="Choose slide"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog" class="section blog" data-anchor="blog" aria-label="Blog">
+      <div class="container">
+        <header class="section-head"><h2>Latest Posts</h2></header>
+        <div class="grid three posts">
+          <article class="post">
+            <img src="assets/img/ph-8.png" alt="Post 1">
+            <h3><a href="#" aria-label="Read post one">Design Systems That Scale</a></h3>
+            <p>Strategies for creating durable UI kits.</p>
+          </article>
+          <article class="post">
+            <img src="assets/img/ph-9.png" alt="Post 2">
+            <h3><a href="#" aria-label="Read post two">Ship Faster With Vite</a></h3>
+            <p>Modern tooling for smooth DX.</p>
+          </article>
+          <article class="post">
+            <img src="assets/img/ph-8.png" alt="Post 3">
+            <h3><a href="#" aria-label="Read post three">Accessibility Wins</a></h3>
+            <p>Small changes, big impact.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact" data-anchor="contact" aria-label="Contact">
+      <div class="container split">
+        <div>
+          <header class="section-head"><h2>Contact</h2></header>
+          <form class="contact-form" novalidate>
+            <div class="field icon name">
+              <input required type="text" name="name" placeholder="Your name">
+            </div>
+            <div class="field icon email">
+              <input required type="email" name="email" placeholder="Email address">
+            </div>
+            <div class="field icon phone">
+              <input type="tel" name="phone" placeholder="Phone (optional)">
+            </div>
+            <div class="field icon message">
+              <textarea required name="message" rows="4" placeholder="How can I help?"></textarea>
+            </div>
+            <button class="btn primary" type="submit">Send message</button>
+            <p class="form-msg" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+        <figure class="map">
+          <img src="assets/img/Screenshot 2025-08-29 215655.png" alt="Map placeholder">
+          <figcaption>Based in Your City — working worldwide.</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom-wrap">
+      <div class="footer-bottom-left">
+        <small class="site-generator">© <span id="year"></span> Career Portfolio</small>
+      </div>
+      <div class="footer-bottom-right">
+        <nav class="social">
+          <a href="#" aria-label="Twitter">T</a>
+          <a href="#" aria-label="GitHub">G</a>
+          <a href="#" aria-label="LinkedIn">L</a>
+        </nav>
+      </div>
+    </div>
+    <button class="to-top" aria-label="Back to top">↑</button>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Image preview">
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <img alt="Preview">
+  </div>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
